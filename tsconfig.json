@@ -1,3 +1,10 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    /* Completeness */
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "strict": true,
+    "baseUrl": "./",
+  }
 }

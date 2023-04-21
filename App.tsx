@@ -1,12 +1,16 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
 
-const app = () => {
+import theme from './src/global/styles/theme/theme';
+
+import { Routes } from './src/routes';
+
+export default function App() {
   return (
-    <View>
-      <Text>oii</Text>
-    </View>
+    <>
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
+    </>
   );
-};
-
-export { app as App };
+}
