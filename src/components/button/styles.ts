@@ -4,6 +4,7 @@ import { TouchableOpacity } from 'react-native';
 import { TouchableOpacityProps } from 'react-native';
 interface ButtonProps extends TouchableOpacityProps{
   color: string;
+  enabled?: boolean;
 };
 export const Container = styled(TouchableOpacity)<ButtonProps>`
   width: 100%;
@@ -13,8 +14,14 @@ export const Container = styled(TouchableOpacity)<ButtonProps>`
   justify-content: center;
 
   background-color: ${({color })=> color };
+  margin-bottom: 8px;
 `;
-export const Title = styled.Text`
+
+type TextProps = {
+  light?: boolean
+}
+export const Title = styled.Text<TextProps>`
   font-size: ${RFValue(15)}px;
-  color: ${({theme})=> theme.colors.shape}
+  color: ${({theme, light})=> light ?theme.colors.header :theme.colors.shape};
 `;
+
